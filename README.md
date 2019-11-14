@@ -19,16 +19,14 @@
 
 2.提取文章
 -----
-
-###维基百科语料库文章提取
-  下载完WikiExtractor后,解压，使用WikiExtractor.py脚本，通过一下命令来提取文章
+  + 下载完WikiExtractor后,解压，使用WikiExtractor.py脚本，通过一下命令来提取文章
   `python WikiExtractor.py -b 500M -o zhwiki zhwiki-20180720-pages-articles.xml.bz2`
-  **参数介绍**  
-  -b 提取文章后每个文章大小
-  -o 指定输出文件保存的目录
-  zhwiki-20180720-pages-articles.xml.bz2, 下载维基百科语料的地址
+  + **参数介绍**  
+    + -b 提取文章后每个文章大小
+    + -o 指定输出文件保存的目录
+    + zhwiki-20180720-pages-articles.xml.bz2, 下载维基百科语料的地址
 
-  使用WikiExtractor提取文章格式如下：
+  + 使用WikiExtractor提取的文章格式如下：
   `<doc id="" revid="" url="" title="">...<\doc>`
 
 3.中文简体和繁体转换
@@ -37,11 +35,11 @@
 
 4.正则表达式提取文章内容
 -----
-  由于提取文章包含许多`<doc></doc>`,故需要过滤。使用filter.py文件即可过滤
+  由于提取的文章包含许多`<doc></doc>`,故需要过滤。使用filter.py文件即可过滤
 
 5.分词并合并文件
 -----
-  使用jieba分词工具或者hanlp工具对文件进行分词处理后合并文件。
+  使用jieba分词工具, hanlp工具或者斯坦福切词工具对文件进行分词处理并合并文件。
 
 6.Word2Vec模型训练
 -----
